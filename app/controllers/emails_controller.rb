@@ -9,12 +9,12 @@ class EmailsController < ApplicationController
 
     body = {
       from: 'admin@likelion.org',
-      to:   params[:email],
+      to: params[:email],
       subject: params[:subject],
-      text:    params[:description]
+      text: params[:description]
     }
 
-    mailgun.send_message(ENV['MAILGUn_DOMAIN'], body)
+    mailgun.send_message(ENV['MAILGUN_DOMAIN'], body)
 
     redirect_to '/'
   end
